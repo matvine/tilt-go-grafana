@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tilt-go-grafana-app
+  name: app
   labels:
     app: app
     app.kubernetes.io/name: app
@@ -27,7 +27,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: tilt-go-grafana
+  name: app
   labels:
     app.kubernetes.io/name: app
     app.kubernetes.io/part-of: tilt-go-grafana
@@ -38,3 +38,14 @@ spec:
   ports:
     - name: http
       port: 8080
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: app
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: app
+  endpoints:
+    - port: "http"

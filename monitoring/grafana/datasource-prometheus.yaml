@@ -5,3 +5,8 @@ datasources:
   type: prometheus
   url: http://prometheus-k8s-1.prometheus-operated.monitoring.svc.cluster.local:9090/
   default: true
+- name: Loki
+  type: loki
+  url: http://tilt-go-grafana-loki.default.svc.cluster.local:3100
+  default: true
+
