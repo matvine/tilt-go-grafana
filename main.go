@@ -49,6 +49,7 @@ func main() {
 	prometheus.MustRegister(httpSummary)
 
 	r := mux.NewRouter()
+	r.Use()
 	r.HandleFunc("/", HomeHandler)
 	r.HandleFunc("/index", IndexHandler)
 	r.Handle("/metrics", promhttp.Handler())

@@ -1,0 +1,12 @@
+dependencies:
+- name: cassandra
+  repository: https://charts.helm.sh/incubator
+  version: 0.15.3
+- name: elasticsearch
+  repository: https://helm.elastic.co
+  version: 7.13.2
+- name: kafka
+  repository: https://charts.bitnami.com/bitnami
+  version: 12.20.0
+digest: sha256:4135b54527fdda51f198985161cb82c7cc7660a4b577bd70b1223c2f2fb7496e
+generated: "2021-07-07T16:13:55.853851755Z"

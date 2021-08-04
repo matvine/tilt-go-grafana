@@ -6,6 +6,11 @@ load(
     'get_prometheus_dependencies',
 )
 
+load('ext://helm_remote', 'helm_remote')
+helm_remote('jaeger',
+            repo_name='jaegertracing',
+            repo_url='https://jaegertracing.github.io/helm-charts')
+
 setup_monitoring()
 
 load (
